@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full bg-slate-600">asasa</div>
+  <div class="pl-[200px] pt-[89px] pr-[176px]">
+    <slot></slot>
+  </div>
 </template>
-
-<style scoped></style>
