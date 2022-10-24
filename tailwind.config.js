@@ -6,6 +6,7 @@ module.exports = {
       fontFamily: {
         bpgArial: ["BPG Arial"],
         contractica: ["TBC Contractica CAPS"],
+        anonymous: ["Anonymous Pro"],
       },
     },
   },
