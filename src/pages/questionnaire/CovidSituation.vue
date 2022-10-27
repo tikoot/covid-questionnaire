@@ -7,7 +7,6 @@
         <img src="@/assets/images/vaccinate2.png" alt="" />
       </div>
     </section>
-    <the-buttons></the-buttons>
   </the-wrapper>
 </template>
 
