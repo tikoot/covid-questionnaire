@@ -2,7 +2,7 @@
   <the-wrapper>
     <the-header page="1"></the-header>
     <section>
-      <VueForm @submit.prevent="submitForm()" v-slot="{ meta }">
+      <VueForm @submit.prevent="onSubmit" v-slot="{ meta }">
         <div class="flex justify-between">
           <div class="min-w-[35%] pt-[42px]">
             <div class="flex flex-col pb-[47px]">
@@ -20,7 +20,6 @@
                 class="text-[#F15524] text-base pt-[5px] pl-5"
               />
             </div>
-
             <div class="flex flex-col pb-[47px]">
               <label for="lastname" class="text-[22px] font-bold pb-2 mb-[1px]"
                 >გვარი*</label
@@ -66,8 +65,9 @@
             <img src="@/assets/images/scan2.png" alt="" />
           </div>
         </div>
-        <div class="flex justify-center">
+        <div class="flex justify-center m-auto">
           <forward-button
+            @click="onSubmit"
             v-if="meta.valid && meta.touched"
             active
             to="/covid-situation"
@@ -88,16 +88,23 @@ export default {
     Field,
     ErrorMessage,
   },
-  data() {
-    return {
-      first_name: "",
-      last_name: "",
-      email: "",
-    };
+  mounted() {
+    if (localStorage.first_name) {
+      this.first_name = localStorage.first_name;
+    }
+    if (localStorage.last_name) {
+      this.last_name = localStorage.last_name;
+    }
+    if (localStorage.email) {
+      this.email = localStorage.email;
+    }
   },
-
   methods: {
-    submitForm() {},
+    onSubmit() {
+      this.$store.dispatch("userModule/firstName", this.first_name);
+      this.$store.dispatch("userModule/lastName", this.last_name);
+      this.$store.dispatch("userModule/email", this.email);
+    },
   },
 };
 </script>

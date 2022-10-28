@@ -1,6 +1,4 @@
 import { createStore } from "vuex";
-import mutations from "./mutations";
-import getters from "./getters";
 
 import userModule from "./indetifyUser/index.js";
 
@@ -11,8 +9,8 @@ const store = createStore({
   state() {
     return {};
   },
-  mutations,
-  getters,
+  mutations: {},
+  actions: {},
 });
 
 export default store;
