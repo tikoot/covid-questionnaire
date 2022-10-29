@@ -66,8 +66,52 @@
                 class="text-[#F15524] text-base pt-[5px] pl-5"
               />
             </div>
+            <div class="pt-[47px]">
+              <div v-if="values.antibody_test === 'true'">
+                <h2 class="text-[22px] font-bold max-w-[596px] pb-[29px]">
+                  თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებითი რიცხვი და
+                  ანტისხეულების რაოდენობა*
+                </h2>
+                <div class="pl-5 flex flex-col pb-[47px]">
+                  <Field
+                    name="test_date"
+                    type="text"
+                    placeholder="რიცხვი"
+                    class="placeholder:text-[#232323] bg-transparent border-[0.8px] border-[#232323] px-5 py-[9px] text-lg max-w-[513px]"
+                    v-model="test_date"
+                  />
+                </div>
+                <div class="pl-5 flex flex-col pb-[47px]">
+                  <Field
+                    name="antibodies_number"
+                    type="number"
+                    placeholder="ანტისხეულების რაოდენობა"
+                    class="placeholder:text-[#232323] bg-transparent border-[0.8px] border-[#232323] px-5 py-[9px] text-lg max-w-[513px]"
+                    v-model.number="antibodies_number"
+                  />
+                </div>
+              </div>
+              <div v-if="values.antibody_test === 'false'">
+                <h2 class="text-[22px] font-bold max-w-[596px] pb-[29px]">
+                  მიუთითე მიახლოებითი პერიოდი (დღე/თვე/წელი) როდის გქონდა
+                  Covid-19*
+                </h2>
+                <div class="pl-5 flex flex-col pb-[47px]">
+                  <Field
+                    name="covid_sickness_date"
+                    type="date"
+                    rules="required"
+                    class="bg-transparent border-[0.8px] border-[#232323] px-5 py-[9px] text-lg max-w-[513px]"
+                    v-model="covid_sickness_date"
+                  />
+                  <ErrorMessage
+                    name="covid_sickness_date"
+                    class="text-[#F15524] text-base pt-[5px] pl-5"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
-
           <div>
             <img src="@/assets/images/vaccinate2.png" alt="" />
           </div>
@@ -103,6 +147,15 @@ export default {
     if (localStorage.had_antibody_test) {
       this.antibody_test = localStorage.had_antibody_test;
     }
+    if (localStorage.test_date) {
+      this.test_date = localStorage.test_date;
+    }
+    if (localStorage.antibodies_number) {
+      this.antibodies_number = localStorage.antibodies_number;
+    }
+    if (localStorage.covid_sickness_date) {
+      this.covid_sickness_date = localStorage.covid_sickness_date;
+    }
   },
   methods: {
     onSubmit() {
@@ -110,6 +163,15 @@ export default {
       this.$store.dispatch(
         "situationModule/hadAntibodyTest",
         this.antibody_test
+      );
+      this.$store.dispatch("situationModule/testDate", this.test_date);
+      this.$store.dispatch(
+        "situationModule/antibodiesNumber",
+        this.antibodies_number
+      );
+      this.$store.dispatch(
+        "situationModule/covidSickness",
+        this.covid_sickness_date
       );
     },
   },
