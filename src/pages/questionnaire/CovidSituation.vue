@@ -46,7 +46,7 @@
                 <Field
                   name="antibody_test"
                   type="radio"
-                  value="yes"
+                  value="true"
                   rules="required"
                   v-model="antibody_test"
                 />
@@ -56,7 +56,7 @@
                 <Field
                   name="antibody_test"
                   type="radio"
-                  value="no"
+                  value="false"
                   v-model="antibody_test"
                 />
                 <label class="text-[20px] pl-[19px]">არა</label>
@@ -100,10 +100,17 @@ export default {
     if (localStorage.had_covid) {
       this.had_covid = localStorage.had_covid;
     }
+    if (localStorage.had_antibody_test) {
+      this.antibody_test = localStorage.had_antibody_test;
+    }
   },
   methods: {
     onSubmit() {
       this.$store.dispatch("situationModule/hadCovid", this.had_covid);
+      this.$store.dispatch(
+        "situationModule/hadAntibodyTest",
+        this.antibody_test
+      );
     },
   },
 };

@@ -3,6 +3,7 @@ export default {
   state() {
     return {
       had_covid: "",
+      had_antibody_test: null,
     };
   },
   mutations: {
@@ -10,10 +11,21 @@ export default {
       state.had_covid = payload;
       localStorage.setItem("had_covid", payload);
     },
+    hadAntibodyTest(state, payload) {
+      if (payload === "true") {
+        state.had_antibody_test = true;
+      } else {
+        state.had_antibody_test = false;
+      }
+      localStorage.setItem("had_antibody_test", payload);
+    },
   },
   actions: {
     hadCovid(context, payload) {
       context.commit("hadCovid", payload);
+    },
+    hadAntibodyTest(context, payload) {
+      context.commit("hadAntibodyTest", payload);
     },
   },
   getters: {
