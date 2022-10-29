@@ -40,7 +40,7 @@
             active
             to="/covid-policy"
           ></forward-button>
-          <forward-button></forward-button>
+          <forward-button v-else></forward-button>
         </div>
       </VueForm>
     </section>
@@ -56,9 +56,15 @@ export default {
     Field,
     ErrorMessage,
   },
-  mounted() {},
+  mounted() {
+    if (localStorage.had_vaccine) {
+      this.had_vaccine = localStorage.had_vaccine;
+    }
+  },
   methods: {
-    onSubmit() {},
+    onSubmit() {
+      this.$store.dispatch("vaccineModule/hadVaccine", this.had_vaccine);
+    },
   },
 };
 </script>
