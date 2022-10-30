@@ -6,31 +6,34 @@
         <div class="flex justify-between">
           <div class="min-w-[35%] pt-[42px]">
             <h2 class="text-[22px] font-bold">გაქვს გადატანილი Covid-19?*</h2>
-            <div class="pl-5">
+            <div class="pl-5 flex items-center pb-[8px] pt-[11px]">
               <Field
                 name="had_covid"
                 type="radio"
                 value="yes"
                 rules="required"
                 v-model="had_covid"
+                class="accent-[#232323] w-[23px] h-[23px]"
               />
               <label class="text-[20px] pl-[19px]">კი</label>
             </div>
-            <div class="pl-5">
+            <div class="pl-5 flex items-center pb-[8px]">
               <Field
                 name="had_covid"
                 type="radio"
                 value="no"
                 v-model="had_covid"
+                class="accent-[#232323] w-[23px] h-[23px]"
               />
               <label class="text-[20px] pl-[19px]">არა</label>
             </div>
-            <div class="pl-5">
+            <div class="pl-5 flex items-center pb-[8px]">
               <Field
                 name="had_covid"
                 type="radio"
                 value="have_right_now"
                 v-model="had_covid"
+                class="accent-[#232323] w-[23px] h-[23px]"
               />
               <label class="text-[20px] pl-[19px]">ახლა მაქვს</label>
             </div>
@@ -42,22 +45,24 @@
               <h2 class="text-[22px] font-bold">
                 ანტისხეულების ტესტი გაქვს გაკეთებული?*
               </h2>
-              <div class="pl-5">
+              <div class="pl-5 flex items-center pb-[8px] pt-[11px]">
                 <Field
                   name="antibody_test"
                   type="radio"
                   value="true"
                   rules="required"
                   v-model="antibody_test"
+                  class="accent-[#232323] w-[23px] h-[23px]"
                 />
                 <label class="text-[20px] pl-[19px]">კი</label>
               </div>
-              <div class="pl-5">
+              <div class="pl-5 flex items-center">
                 <Field
                   name="antibody_test"
                   type="radio"
                   value="false"
                   v-model="antibody_test"
+                  class="accent-[#232323] w-[23px] h-[23px]"
                 />
                 <label class="text-[20px] pl-[19px]">არა</label>
               </div>

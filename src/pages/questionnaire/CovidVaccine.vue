@@ -5,23 +5,25 @@
       <VueForm @submit="onSubmit" v-slot="{ meta, values }">
         <div class="flex justify-between">
           <div class="min-w-[35%] pt-[42px]">
-            <h2 class="text-[22px] font-bold pb-[8px]">უკვე აცრილი ხარ?*</h2>
-            <div class="pl-5">
+            <h2 class="text-[22px] font-bold pb-[11px]">უკვე აცრილი ხარ?*</h2>
+            <div class="pl-5 flex items-center pb-[8px]">
               <Field
                 name="had_vaccine"
                 type="radio"
                 value="true"
                 rules="required"
                 v-model="had_vaccine"
+                class="accent-[#232323] w-[23px] h-[23px]"
               />
               <label class="text-[20px] pl-[19px]">კი</label>
             </div>
-            <div class="pl-5">
+            <div class="pl-5 flex items-center">
               <Field
                 name="had_vaccine"
                 type="radio"
                 value="false"
                 v-model="had_vaccine"
+                class="accent-[#232323] w-[23px] h-[23px]"
               />
               <label class="text-[20px] pl-[19px]">არა</label>
             </div>
@@ -30,36 +32,39 @@
               class="text-[#F15524] text-base pt-[5px] pl-5"
             />
             <div v-if="values.had_vaccine === 'true'" class="pt-[46px]">
-              <h2 class="text-[22px] font-bold pb-[8px]">
+              <h2 class="text-[22px] font-bold pb-[11px]">
                 აირჩიე რა ეტაპზე ხარ*
               </h2>
-              <div class="pl-5 pb-[16px]">
+              <div class="pl-5 flex items-center pb-[8px]">
                 <Field
                   name="vaccine_stage"
                   type="radio"
                   value="first_dosage_and_registered_on_the_second"
                   rules="required"
                   v-model="vaccine_stage"
+                  class="accent-[#232323] w-[23px] h-[23px]"
                 />
                 <label class="text-[20px] pl-[19px]"
                   >პირველი დოზა და დარეგისტრირებული ვარ მეორეზე</label
                 >
               </div>
-              <div class="pl-5 pb-[16px]">
+              <div class="pl-5 flex items-center pb-[8px]">
                 <Field
                   name="vaccine_stage"
                   type="radio"
                   value="fully_vaccinated"
                   v-model="vaccine_stage"
+                  class="accent-[#232323] w-[23px] h-[23px]"
                 />
                 <label class="text-[20px] pl-[19px]">სრულად აცრილი ვარ</label>
               </div>
-              <div class="pl-5">
+              <div class="pl-5 flex items-center">
                 <Field
                   name="vaccine_stage"
                   type="radio"
                   value="first_dosage_and_not_registered_yet"
                   v-model="vaccine_stage"
+                  class="accent-[#232323] w-[23px] h-[23px]"
                 />
                 <label class="text-[20px] pl-[19px]"
                   >პირველი დოზა და არ დავრეგისტრირებულვარ მეორეზე</label
@@ -89,34 +94,37 @@
               </p>
             </div>
             <div v-if="values.had_vaccine === 'false'" class="pt-[46px]">
-              <h2 class="text-[22px] font-bold pb-[8px]">რას ელოდები?*</h2>
-              <div class="pl-5 pb-[16px]">
+              <h2 class="text-[22px] font-bold pb-[11px]">რას ელოდები?*</h2>
+              <div class="pl-5 flex items-center pb-[8px]">
                 <Field
                   name="i_am_waiting"
                   type="radio"
                   value="registered_and_waiting"
                   rules="required"
                   v-model="i_am_waiting"
+                  class="accent-[#232323] w-[23px] h-[23px]"
                 />
                 <label class="text-[20px] pl-[19px]"
                   >დარეგისტრირებული ვარ და ველოდები რიცხვს</label
                 >
               </div>
-              <div class="pl-5 pb-[16px]">
+              <div class="pl-5 flex items-center pb-[8px]">
                 <Field
                   name="i_am_waiting"
                   type="radio"
                   value="not_planning"
                   v-model="i_am_waiting"
+                  class="accent-[#232323] w-[23px] h-[23px]"
                 />
                 <label class="text-[20px] pl-[19px]">არ ვგეგმავ</label>
               </div>
-              <div class="pl-5">
+              <div class="pl-5 flex items-center">
                 <Field
                   name="i_am_waiting"
                   type="radio"
                   value="had_covid_and_planning_to_be_vaccinated"
                   v-model="i_am_waiting"
+                  class="accent-[#232323] w-[23px] h-[23px]"
                 />
                 <label class="text-[20px] pl-[19px]"
                   >გადატანილი მაქვს და ვგეგმავ აცრას</label
