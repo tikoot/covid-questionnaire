@@ -82,6 +82,7 @@
                     name="test_date"
                     type="text"
                     placeholder="რიცხვი"
+                    onfocus="(this.type='date')"
                     class="placeholder:text-[#232323] bg-transparent border-[0.8px] border-[#232323] px-5 py-[9px] text-lg max-w-[513px]"
                     v-model="test_date"
                   />
@@ -165,19 +166,23 @@ export default {
   methods: {
     onSubmit() {
       this.$store.dispatch("situationModule/hadCovid", this.had_covid);
-      this.$store.dispatch(
-        "situationModule/hadAntibodyTest",
-        this.antibody_test
-      );
+      if (this.had_covid === "yes") {
+        this.$store.dispatch(
+          "situationModule/hadAntibodyTest",
+          this.antibody_test
+        );
+      }
       this.$store.dispatch("situationModule/testDate", this.test_date);
       this.$store.dispatch(
         "situationModule/antibodiesNumber",
         this.antibodies_number
       );
-      this.$store.dispatch(
-        "situationModule/covidSickness",
-        this.covid_sickness_date
-      );
+      if (this.antibody_test === "false") {
+        this.$store.dispatch(
+          "situationModule/covidSickness",
+          new Date(this.covid_sickness_date).toLocaleDateString("en-GB")
+        );
+      }
     },
   },
 };

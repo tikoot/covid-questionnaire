@@ -77,7 +77,8 @@
             </div>
             <div
               v-if="
-                values.vaccine_stage === 'first_dosage_and_not_registered_yet'
+                values.vaccination_stage ===
+                'first_dosage_and_not_registered_yet'
               "
               class="pt-[39px] pl-[62px] text-xl"
             >
