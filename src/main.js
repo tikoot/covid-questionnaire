@@ -8,6 +8,7 @@ import "./config/vee-validate/rules";
 import TheHeader from "@/components/TheHeader.vue";
 import ForwardButton from "@/components/buttons/ForwardButton.vue";
 import BackButton from "@/components/buttons/BackButton.vue";
+import SubmitButton from "@/components/buttons/SubmitButton.vue";
 import TheWrapper from "@/components/TheWrapper.vue";
 
 const app = createApp(App);
@@ -15,6 +16,7 @@ const app = createApp(App);
 app.component("TheHeader", TheHeader);
 app.component("ForwardButton", ForwardButton);
 app.component("BackButton", BackButton);
+app.component("SubmitButton", SubmitButton);
 app.component("TheWrapper", TheWrapper);
 app.use(store);
 app.use(router);
