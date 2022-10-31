@@ -105,9 +105,11 @@
                 <div class="pl-5 flex flex-col pb-[47px]">
                   <Field
                     name="covid_sickness_date"
-                    type="date"
+                    type="text"
+                    placeholder="დდ/თთ/წწ"
+                    onfocus="(this.type='date')"
                     rules="required"
-                    class="bg-transparent border-[0.8px] border-[#232323] px-5 py-[9px] text-lg max-w-[513px]"
+                    class="placeholder:text-[#232323] bg-transparent border-[0.8px] border-[#232323] px-5 py-[9px] text-lg max-w-[513px]"
                     v-model="covid_sickness_date"
                   />
                   <ErrorMessage
