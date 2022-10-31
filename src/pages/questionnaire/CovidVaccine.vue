@@ -37,11 +37,11 @@
               </h2>
               <div class="pl-5 flex items-center pb-[8px]">
                 <Field
-                  name="vaccine_stage"
+                  name="vaccination_stage"
                   type="radio"
                   value="first_dosage_and_registered_on_the_second"
                   rules="required"
-                  v-model="vaccine_stage"
+                  v-model="vaccination_stage"
                   class="accent-[#232323] w-[23px] h-[23px]"
                 />
                 <label class="text-[20px] pl-[19px]"
@@ -50,20 +50,20 @@
               </div>
               <div class="pl-5 flex items-center pb-[8px]">
                 <Field
-                  name="vaccine_stage"
+                  name="vaccination_stage"
                   type="radio"
                   value="fully_vaccinated"
-                  v-model="vaccine_stage"
+                  v-model="vaccination_stage"
                   class="accent-[#232323] w-[23px] h-[23px]"
                 />
                 <label class="text-[20px] pl-[19px]">სრულად აცრილი ვარ</label>
               </div>
               <div class="pl-5 flex items-center">
                 <Field
-                  name="vaccine_stage"
+                  name="vaccination_stage"
                   type="radio"
                   value="first_dosage_and_not_registered_yet"
-                  v-model="vaccine_stage"
+                  v-model="vaccination_stage"
                   class="accent-[#232323] w-[23px] h-[23px]"
                 />
                 <label class="text-[20px] pl-[19px]"
@@ -71,7 +71,7 @@
                 >
               </div>
               <ErrorMessage
-                name="vaccine_stage"
+                name="vaccination_stage"
                 class="text-[#F15524] text-base pt-[5px] pl-5"
               />
             </div>
@@ -189,8 +189,8 @@ export default {
     if (localStorage.had_vaccine) {
       this.had_vaccine = localStorage.had_vaccine;
     }
-    if (localStorage.vaccine_stage) {
-      this.vaccine_stage = localStorage.vaccination_stage;
+    if (localStorage.vaccination_stage) {
+      this.vaccination_stage = localStorage.vaccination_stage;
     }
     if (localStorage.i_am_waiting) {
       this.i_am_waiting = localStorage.i_am_waiting;
@@ -199,7 +199,10 @@ export default {
   methods: {
     onSubmit() {
       this.$store.dispatch("vaccineModule/hadVaccine", this.had_vaccine);
-      this.$store.dispatch("vaccineModule/vaccineStage", this.vaccine_stage);
+      this.$store.dispatch(
+        "vaccineModule/vaccineStage",
+        this.vaccination_stage
+      );
       this.$store.dispatch("vaccineModule/waiting", this.i_am_waiting);
     },
   },
