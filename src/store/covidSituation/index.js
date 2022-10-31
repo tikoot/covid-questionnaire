@@ -33,7 +33,9 @@ export default {
       localStorage.setItem("antibodies_number", payload);
     },
     covidSickness(state, payload) {
-      state.covid_sickness_date = payload;
+      const result = new Date(payload).toLocaleDateString("en-GB");
+      state.covid_sickness_date = result;
+
       localStorage.setItem("covid_sickness_date", payload);
     },
   },
