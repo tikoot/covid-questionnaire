@@ -4,6 +4,7 @@ import router from "./router";
 import store from "./store/index";
 import "./assets/styles/index.css";
 import "./config/vee-validate/rules";
+import "./config/vee-validate/messages";
 
 import TheHeader from "@/components/TheHeader.vue";
 import ForwardButton from "@/components/buttons/ForwardButton.vue";

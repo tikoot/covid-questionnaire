@@ -11,7 +11,7 @@
               >
               <Field
                 name="username"
-                rules="required|min_max_name:2,255"
+                rules="required|min:2|max:255"
                 class="bg-transparent border-[0.8px] border-[#232323] px-5 py-[9px] text-lg"
                 v-model.trim="first_name"
               />
@@ -27,7 +27,7 @@
               <Field
                 name="lastname"
                 type="lastname"
-                rules="required|min_max_lastname:2,255"
+                rules="required|min:2|max:255"
                 class="bg-transparent border-[0.8px] border-[#232323] px-5 py-[9px] text-lg"
                 v-model.trim="last_name"
               />
@@ -43,7 +43,7 @@
               >
               <Field
                 name="email"
-                rules="required|email"
+                rules="required|email|redberry_email"
                 class="bg-transparent border-[0.8px] border-[#232323] px-5 py-[9px] text-lg"
                 v-model.trim="email"
               />
