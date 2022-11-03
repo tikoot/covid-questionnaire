@@ -160,7 +160,27 @@
             </div>
           </div>
 
-          <div><img src="@/assets/images/doctor2.png" alt="" /></div>
+          <div class="relative pt-[48px]">
+            <img
+              src="@/assets/images/doctor2.png"
+              alt=""
+              class="z-10 relative"
+            />
+
+            <svg
+              class="animate absolute top-[26px] left-[32px]"
+              width="288"
+              height="313"
+              viewBox="0 0 288 313"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M114.5 62L124.5 0.5L161 62L280 43.5L186 94.5L288 174L153.5 126.5L18.5 312.5L114.5 106.5L0 85L114.5 62Z"
+                fill="#C9CB6A"
+              />
+            </svg>
+          </div>
         </div>
         <div class="flex items-center justify-between m-auto max-w-[145px]">
           <back-button to="/covid-situation"></back-button>
@@ -209,3 +229,21 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.animate {
+  animation: in-out 0.8s ease;
+}
+
+@keyframes in-out {
+  0% {
+    position: absolute;
+    top: 200px;
+    left: 40px;
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+</style>

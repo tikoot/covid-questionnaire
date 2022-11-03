@@ -61,8 +61,19 @@
               </p>
             </div>
           </div>
-          <div class="-m-12">
-            <img src="@/assets/images/scan2.png" alt="" />
+
+          <div class="-mt-14 relative">
+            <img src="@/assets/images/scan2.png" class="z-10 relative" />
+            <svg
+              width="622"
+              height="75"
+              viewBox="0 0 622 75"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="animate absolute top-[225px] w-[80%] left-[80px]"
+            >
+              <rect width="622" height="75" fill="#D6D16E"></rect>
+            </svg>
           </div>
         </div>
         <div class="flex justify-center m-auto">
@@ -108,3 +119,19 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.animate {
+  animation: in-out 1s forwards;
+}
+
+@keyframes in-out {
+  0% {
+    transform: translateX(-10%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+</style>

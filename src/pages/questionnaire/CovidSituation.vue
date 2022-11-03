@@ -120,8 +120,18 @@
               </div>
             </div>
           </div>
-          <div>
-            <img src="@/assets/images/vaccinate2.png" alt="" />
+          <div class="relative">
+            <img src="@/assets/images/vaccinate2.png" class="relative z-10" />
+            <svg
+              width="229"
+              height="229"
+              viewBox="0 0 229 229"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="animate absolute top-[260px] left-[80px]"
+            >
+              <circle cx="114.5" cy="114.5" r="114.5" fill="#DD3939" />
+            </svg>
           </div>
         </div>
         <div class="flex items-center justify-between m-auto max-w-[145px]">
@@ -189,3 +199,21 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.animate {
+  animation: in-out 0.8s backwards;
+}
+
+@keyframes in-out {
+  0% {
+    position: absolute;
+    top: 200px;
+    right: 40px;
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+</style>

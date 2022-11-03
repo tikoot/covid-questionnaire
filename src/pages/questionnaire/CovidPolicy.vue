@@ -169,8 +169,26 @@
               <back-button to="/covid-vaccine"></back-button>
             </div>
           </div>
-          <div>
-            <img src="@/assets/images/bike2 1.png" alt="" />
+
+          <div class="relative">
+            <img
+              src="@/assets/images/bike2 1.png"
+              class="relative z-10"
+              alt=""
+            />
+            <svg
+              width="196"
+              height="173"
+              viewBox="0 0 196 173"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="animate absolute top-[64px] left-[96px]"
+            >
+              <path
+                d="M48.5005 12C75.7005 9.6 94.5005 28.3333 100.501 38C110.501 1.5 143.5 0.5 161.5 0.5C179.5 0.5 203.5 22 192.5 69C183.7 106.6 144.5 153.667 126 172.5C87.6668 153.5 9.30051 107.3 2.50051 74.5C-5.99949 33.5 14.5005 15 48.5005 12Z"
+                fill="#F39494"
+              />
+            </svg>
           </div>
         </div>
       </VueForm>
@@ -218,3 +236,21 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.animate {
+  animation: in-out 0.8s ease;
+}
+
+@keyframes in-out {
+  0% {
+    position: absolute;
+    top: 26px;
+    left: 32px;
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+</style>

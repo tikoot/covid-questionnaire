@@ -1,8 +1,14 @@
 <template>
-  <div class="bg-[#232323] w-full h-full flex items-center">
-    <h1 class="text-white text-[64px] font-bold font-contractica m-auto">
+  <div class="h-[100vh] bg-[#232323] flex flex-col justify-center items-center">
+    <div class="mr-56">
+      <img class="animate" src="@/assets/images/star1.png" alt="big star" />
+    </div>
+    <h1 class="text-white text-[64px] font-bold my-6 relative">
       მ ა დ ლ ო ბ ა
     </h1>
+    <div class="ml-56">
+      <img class="animate" src="@/assets/images/star.png" alt="small star" />
+    </div>
   </div>
 </template>
 
@@ -74,3 +80,18 @@ export default {
   },
 };
 </script>
+<style scoped>
+.animate {
+  animation: fade 1s ease;
+  animation-delay: 600ms;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+</style>
