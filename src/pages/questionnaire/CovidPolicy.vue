@@ -172,7 +172,7 @@
 
           <div class="relative">
             <img
-              src="@/assets/images/bike2 1.png"
+              src="@/assets/images/bike21.png"
               class="relative z-10"
               alt=""
             />

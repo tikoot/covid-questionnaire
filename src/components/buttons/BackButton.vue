@@ -1,6 +1,6 @@
 <template>
   <router-link :to="to">
-    <img src="@/assets/images/Vector 7.png" class=""
+    <img src="@/assets/images/Vector7.png" class=""
   /></router-link>
 </template>
 
