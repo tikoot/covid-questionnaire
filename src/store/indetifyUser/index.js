@@ -39,7 +39,7 @@ export default {
     lastName(state) {
       return state.last_name;
     },
-    email(state) {
+    emailAddress(state) {
       return state.email;
     },
   },

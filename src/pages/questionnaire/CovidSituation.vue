@@ -82,6 +82,7 @@
                     name="test_date"
                     type="text"
                     placeholder="რიცხვი"
+                    onfocus="(this.type='date')"
                     class="placeholder:text-[#232323] bg-transparent border-[0.8px] border-[#232323] px-5 py-[9px] text-lg max-w-[513px]"
                     v-model="test_date"
                   />
@@ -104,9 +105,11 @@
                 <div class="pl-5 flex flex-col pb-[47px]">
                   <Field
                     name="covid_sickness_date"
-                    type="date"
+                    type="text"
+                    placeholder="დდ/თთ/წწ"
+                    onfocus="(this.type='date')"
                     rules="required"
-                    class="bg-transparent border-[0.8px] border-[#232323] px-5 py-[9px] text-lg max-w-[513px]"
+                    class="placeholder:text-[#232323] bg-transparent border-[0.8px] border-[#232323] px-5 py-[9px] text-lg max-w-[513px]"
                     v-model="covid_sickness_date"
                   />
                   <ErrorMessage
@@ -117,8 +120,18 @@
               </div>
             </div>
           </div>
-          <div>
-            <img src="@/assets/images/vaccinate2.png" alt="" />
+          <div class="relative">
+            <img src="@/assets/images/vaccinate2.png" class="relative z-10" />
+            <svg
+              width="229"
+              height="229"
+              viewBox="0 0 229 229"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="animate absolute top-[260px] left-[80px]"
+            >
+              <circle cx="114.5" cy="114.5" r="114.5" fill="#DD3939" />
+            </svg>
           </div>
         </div>
         <div class="flex items-center justify-between m-auto max-w-[145px]">
@@ -165,20 +178,42 @@ export default {
   methods: {
     onSubmit() {
       this.$store.dispatch("situationModule/hadCovid", this.had_covid);
-      this.$store.dispatch(
-        "situationModule/hadAntibodyTest",
-        this.antibody_test
-      );
+      if (this.had_covid === "yes") {
+        this.$store.dispatch(
+          "situationModule/hadAntibodyTest",
+          this.antibody_test
+        );
+      }
       this.$store.dispatch("situationModule/testDate", this.test_date);
       this.$store.dispatch(
         "situationModule/antibodiesNumber",
         this.antibodies_number
       );
-      this.$store.dispatch(
-        "situationModule/covidSickness",
-        this.covid_sickness_date
-      );
+      if (this.antibody_test === "false") {
+        this.$store.dispatch(
+          "situationModule/covidSickness",
+          new Date(this.covid_sickness_date).toLocaleDateString("en-GB")
+        );
+      }
     },
   },
 };
 </script>
+
+<style scoped>
+.animate {
+  animation: in-out 0.8s backwards;
+}
+
+@keyframes in-out {
+  0% {
+    position: absolute;
+    top: 200px;
+    right: 40px;
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+</style>

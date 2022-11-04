@@ -37,11 +37,11 @@
               </h2>
               <div class="pl-5 flex items-center pb-[8px]">
                 <Field
-                  name="vaccine_stage"
+                  name="vaccination_stage"
                   type="radio"
                   value="first_dosage_and_registered_on_the_second"
                   rules="required"
-                  v-model="vaccine_stage"
+                  v-model="vaccination_stage"
                   class="accent-[#232323] w-[23px] h-[23px]"
                 />
                 <label class="text-[20px] pl-[19px]"
@@ -50,20 +50,20 @@
               </div>
               <div class="pl-5 flex items-center pb-[8px]">
                 <Field
-                  name="vaccine_stage"
+                  name="vaccination_stage"
                   type="radio"
                   value="fully_vaccinated"
-                  v-model="vaccine_stage"
+                  v-model="vaccination_stage"
                   class="accent-[#232323] w-[23px] h-[23px]"
                 />
                 <label class="text-[20px] pl-[19px]">სრულად აცრილი ვარ</label>
               </div>
               <div class="pl-5 flex items-center">
                 <Field
-                  name="vaccine_stage"
+                  name="vaccination_stage"
                   type="radio"
                   value="first_dosage_and_not_registered_yet"
-                  v-model="vaccine_stage"
+                  v-model="vaccination_stage"
                   class="accent-[#232323] w-[23px] h-[23px]"
                 />
                 <label class="text-[20px] pl-[19px]"
@@ -71,13 +71,14 @@
                 >
               </div>
               <ErrorMessage
-                name="vaccine_stage"
+                name="vaccination_stage"
                 class="text-[#F15524] text-base pt-[5px] pl-5"
               />
             </div>
             <div
               v-if="
-                values.vaccine_stage === 'first_dosage_and_not_registered_yet'
+                values.vaccination_stage ===
+                'first_dosage_and_not_registered_yet'
               "
               class="pt-[39px] pl-[62px] text-xl"
             >
@@ -159,7 +160,27 @@
             </div>
           </div>
 
-          <div><img src="@/assets/images/doctor2.png" alt="" /></div>
+          <div class="relative pt-[48px]">
+            <img
+              src="@/assets/images/doctor2.png"
+              alt=""
+              class="z-10 relative"
+            />
+
+            <svg
+              class="animate absolute top-[26px] left-[32px]"
+              width="288"
+              height="313"
+              viewBox="0 0 288 313"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M114.5 62L124.5 0.5L161 62L280 43.5L186 94.5L288 174L153.5 126.5L18.5 312.5L114.5 106.5L0 85L114.5 62Z"
+                fill="#C9CB6A"
+              />
+            </svg>
+          </div>
         </div>
         <div class="flex items-center justify-between m-auto max-w-[145px]">
           <back-button to="/covid-situation"></back-button>
@@ -189,8 +210,8 @@ export default {
     if (localStorage.had_vaccine) {
       this.had_vaccine = localStorage.had_vaccine;
     }
-    if (localStorage.vaccine_stage) {
-      this.vaccine_stage = localStorage.vaccination_stage;
+    if (localStorage.vaccination_stage) {
+      this.vaccination_stage = localStorage.vaccination_stage;
     }
     if (localStorage.i_am_waiting) {
       this.i_am_waiting = localStorage.i_am_waiting;
@@ -199,9 +220,30 @@ export default {
   methods: {
     onSubmit() {
       this.$store.dispatch("vaccineModule/hadVaccine", this.had_vaccine);
-      this.$store.dispatch("vaccineModule/vaccineStage", this.vaccine_stage);
+      this.$store.dispatch(
+        "vaccineModule/vaccineStage",
+        this.vaccination_stage
+      );
       this.$store.dispatch("vaccineModule/waiting", this.i_am_waiting);
     },
   },
 };
 </script>
+
+<style scoped>
+.animate {
+  animation: in-out 0.8s ease;
+}
+
+@keyframes in-out {
+  0% {
+    position: absolute;
+    top: 200px;
+    left: 40px;
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+</style>

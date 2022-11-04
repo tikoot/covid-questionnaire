@@ -34,6 +34,7 @@ export default {
     },
     covidSickness(state, payload) {
       state.covid_sickness_date = payload;
+
       localStorage.setItem("covid_sickness_date", payload);
     },
   },
