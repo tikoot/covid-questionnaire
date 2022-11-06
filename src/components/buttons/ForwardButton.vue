@@ -1,8 +1,8 @@
 <template>
   <router-link v-if="active" :to="to">
-    <img src="@/assets/images/Vector 8.png"
+    <img src="@/assets/images/Vector8.png"
   /></router-link>
-  <button v-else><img src="@/assets/images/Vector 4.png" /></button>
+  <button v-else><img src="@/assets/images/Vector4.png" /></button>
 </template>
 
 <script>
