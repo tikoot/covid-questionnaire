@@ -7,7 +7,7 @@
           <div class="min-w-[35%] pt-[42px]">
             <div class="flex flex-col pb-[47px]">
               <label for="username" class="text-[22px] font-bold pb-2 mb-[1px]"
-                >სახელი*</label
+                >Name*</label
               >
               <Field
                 name="username"
@@ -22,7 +22,7 @@
             </div>
             <div class="flex flex-col pb-[47px]">
               <label for="lastname" class="text-[22px] font-bold pb-2 mb-[1px]"
-                >გვარი*</label
+                >Lastname*</label
               >
               <Field
                 name="lastname"
@@ -39,7 +39,7 @@
 
             <div class="flex flex-col pb-[47px]">
               <label for="email" class="text-[22px] font-bold pb-2 mb-[1px]"
-                >მეილი*</label
+                >Email*</label
               >
               <Field
                 name="email"
@@ -57,20 +57,20 @@
                 class="border-t-[0.8px] border-[#000000] max-w-[237px] pb-5"
               ></div>
               <p class="text-[#626262] max-w-[365px]">
-                *-ით მონიშნული ველების შევსება სავალდებულოა
+                Fields marked with * are mandatory
               </p>
             </div>
           </div>
 
-          <div class="-mt-14 relative">
-            <img src="@/assets/images/scan2.png" class="z-10 relative" />
+          <div class="hidden lg:block lg:-mt-14 lg:relative ">
+            <img src="@/assets/images/scan2.png" class="z-10 relative lg:w-[640px] 2xl:w-full" />
             <svg
               width="622"
               height="75"
               viewBox="0 0 622 75"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              class="animate absolute top-[225px] w-[80%] left-[80px]"
+              class="animate absolute  lg:top-[150px] 2xl:top-[210px] w-[80%] left-[80px]"
             >
               <rect width="622" height="75" fill="#D6D16E"></rect>
             </svg>

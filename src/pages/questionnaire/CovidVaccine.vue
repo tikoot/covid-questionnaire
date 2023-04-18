@@ -1,11 +1,11 @@
 <template>
   <the-wrapper>
-    <the-header page="2"></the-header>
+    <the-header page="3"></the-header>
     <section>
       <VueForm @submit="onSubmit" v-slot="{ meta, values }">
         <div class="flex justify-between">
           <div class="min-w-[35%] pt-[42px]">
-            <h2 class="text-[22px] font-bold pb-[11px]">უკვე აცრილი ხარ?*</h2>
+            <h2 class="text-[22px] font-bold pb-[11px]">Are you vaccinated?*</h2>
             <div class="pl-5 flex items-center pb-[8px]">
               <Field
                 name="had_vaccine"
@@ -15,7 +15,7 @@
                 v-model="had_vaccine"
                 class="accent-[#232323] w-[23px] h-[23px]"
               />
-              <label class="text-[20px] pl-[19px]">კი</label>
+              <label class="text-[20px] pl-[19px]">Yes</label>
             </div>
             <div class="pl-5 flex items-center">
               <Field
@@ -25,7 +25,7 @@
                 v-model="had_vaccine"
                 class="accent-[#232323] w-[23px] h-[23px]"
               />
-              <label class="text-[20px] pl-[19px]">არა</label>
+              <label class="text-[20px] pl-[19px]">No</label>
             </div>
             <ErrorMessage
               name="had_vaccine"
@@ -33,7 +33,7 @@
             />
             <div v-if="values.had_vaccine === 'true'" class="pt-[46px]">
               <h2 class="text-[22px] font-bold pb-[11px]">
-                აირჩიე რა ეტაპზე ხარ*
+                Choose what stage you are at*
               </h2>
               <div class="pl-5 flex items-center pb-[8px]">
                 <Field
@@ -45,7 +45,8 @@
                   class="accent-[#232323] w-[23px] h-[23px]"
                 />
                 <label class="text-[20px] pl-[19px]"
-                  >პირველი დოზა და დარეგისტრირებული ვარ მეორეზე</label
+                  >First dose and signed up for the second
+                  </label
                 >
               </div>
               <div class="pl-5 flex items-center pb-[8px]">
@@ -56,7 +57,7 @@
                   v-model="vaccination_stage"
                   class="accent-[#232323] w-[23px] h-[23px]"
                 />
-                <label class="text-[20px] pl-[19px]">სრულად აცრილი ვარ</label>
+                <label class="text-[20px] pl-[19px]">I am fully vaccinated</label>
               </div>
               <div class="pl-5 flex items-center">
                 <Field
@@ -67,7 +68,7 @@
                   class="accent-[#232323] w-[23px] h-[23px]"
                 />
                 <label class="text-[20px] pl-[19px]"
-                  >პირველი დოზა და არ დავრეგისტრირებულვარ მეორეზე</label
+                  >First dose and not signed up for the second</label
                 >
               </div>
               <ErrorMessage
@@ -83,8 +84,7 @@
               class="pt-[39px] pl-[62px] text-xl"
             >
               <p>
-                რომ არ გადადო, <br />
-                ბარემ ახლავე დარეგისტრირდი <br />
+                Register Now <br />
                 <a
                   href="https://booking.moh.gov.ge/"
                   target="_blank"
@@ -95,7 +95,7 @@
               </p>
             </div>
             <div v-if="values.had_vaccine === 'false'" class="pt-[46px]">
-              <h2 class="text-[22px] font-bold pb-[11px]">რას ელოდები?*</h2>
+              <h2 class="text-[22px] font-bold pb-[11px]">what are you waiting for?*</h2>
               <div class="pl-5 flex items-center pb-[8px]">
                 <Field
                   name="i_am_waiting"
@@ -106,7 +106,7 @@
                   class="accent-[#232323] w-[23px] h-[23px]"
                 />
                 <label class="text-[20px] pl-[19px]"
-                  >დარეგისტრირებული ვარ და ველოდები რიცხვს</label
+                  >I am registered</label
                 >
               </div>
               <div class="pl-5 flex items-center pb-[8px]">
@@ -117,7 +117,7 @@
                   v-model="i_am_waiting"
                   class="accent-[#232323] w-[23px] h-[23px]"
                 />
-                <label class="text-[20px] pl-[19px]">არ ვგეგმავ</label>
+                <label class="text-[20px] pl-[19px]">I am not going to vaccinate</label>
               </div>
               <div class="pl-5 flex items-center">
                 <Field
@@ -128,7 +128,7 @@
                   class="accent-[#232323] w-[23px] h-[23px]"
                 />
                 <label class="text-[20px] pl-[19px]"
-                  >გადატანილი მაქვს და ვგეგმავ აცრას</label
+                  >I plan to get vaccinated</label
                 >
               </div>
               <ErrorMessage
@@ -144,11 +144,10 @@
               class="pt-[39px] pl-[62px] text-xl"
             >
               <p>
-                ახალი პროტოკოლით კოვიდის გადატანიდან 1 <br />
-                თვის შემდეგ შეგიძლიათ ვაქცინის გაკეთება. <br />
+                You can be vaccinated 1 month after the covid infection. <br />
               </p>
               <p class="pt-5">
-                👉 რეგისტრაციის ბმული <br />
+                👉 Registration Link <br />
                 <a
                   href="https://booking.moh.gov.ge/"
                   target="_blank"
@@ -160,15 +159,15 @@
             </div>
           </div>
 
-          <div class="relative pt-[48px]">
+          <div class="hidden lg:block lg:relative lg:pt-[48px]">
             <img
               src="@/assets/images/doctor2.png"
               alt=""
-              class="z-10 relative"
+              class="z-10 relative lg:w-[540px] 2xl:w-full"
             />
 
             <svg
-              class="animate absolute top-[26px] left-[32px]"
+              class="animate absolute w-[200px] top-[-10px] left-[30px] 2xl:top-[26px] 2xl:left-[32px] 2xl:w-[288px]"
               width="288"
               height="313"
               viewBox="0 0 288 313"

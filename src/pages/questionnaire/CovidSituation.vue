@@ -5,7 +5,7 @@
       <VueForm @submit="onSubmit" v-slot="{ meta, values }">
         <div class="flex justify-between">
           <div class="min-w-[35%] pt-[42px]">
-            <h2 class="text-[22px] font-bold">გაქვს გადატანილი Covid-19?*</h2>
+            <h2 class="text-[22px] font-bold">Have you had Covid-19?*</h2>
             <div class="pl-5 flex items-center pb-[8px] pt-[11px]">
               <Field
                 name="had_covid"
@@ -15,7 +15,7 @@
                 v-model="had_covid"
                 class="accent-[#232323] w-[23px] h-[23px]"
               />
-              <label class="text-[20px] pl-[19px]">კი</label>
+              <label class="text-[20px] pl-[19px]">Yes</label>
             </div>
             <div class="pl-5 flex items-center pb-[8px]">
               <Field
@@ -25,7 +25,7 @@
                 v-model="had_covid"
                 class="accent-[#232323] w-[23px] h-[23px]"
               />
-              <label class="text-[20px] pl-[19px]">არა</label>
+              <label class="text-[20px] pl-[19px]">No</label>
             </div>
             <div class="pl-5 flex items-center pb-[8px]">
               <Field
@@ -35,7 +35,7 @@
                 v-model="had_covid"
                 class="accent-[#232323] w-[23px] h-[23px]"
               />
-              <label class="text-[20px] pl-[19px]">ახლა მაქვს</label>
+              <label class="text-[20px] pl-[19px]">I have it now</label>
             </div>
             <ErrorMessage
               name="had_covid"
@@ -43,7 +43,7 @@
             />
             <div v-if="values.had_covid === 'yes'" class="pt-[46px]">
               <h2 class="text-[22px] font-bold">
-                ანტისხეულების ტესტი გაქვს გაკეთებული?*
+                Have you had an antibody test?*
               </h2>
               <div class="pl-5 flex items-center pb-[8px] pt-[11px]">
                 <Field
@@ -54,7 +54,7 @@
                   v-model="antibody_test"
                   class="accent-[#232323] w-[23px] h-[23px]"
                 />
-                <label class="text-[20px] pl-[19px]">კი</label>
+                <label class="text-[20px] pl-[19px]">Yes</label>
               </div>
               <div class="pl-5 flex items-center">
                 <Field
@@ -64,7 +64,7 @@
                   v-model="antibody_test"
                   class="accent-[#232323] w-[23px] h-[23px]"
                 />
-                <label class="text-[20px] pl-[19px]">არა</label>
+                <label class="text-[20px] pl-[19px]">No</label>
               </div>
               <ErrorMessage
                 name="antibody_test"
@@ -74,14 +74,14 @@
             <div class="pt-[47px]">
               <div v-if="values.antibody_test === 'true'">
                 <h2 class="text-[22px] font-bold max-w-[596px] pb-[29px]">
-                  თუ გახსოვს, გთხოვ მიუთითე ტესტის მიახლოებითი რიცხვი და
-                  ანტისხეულების რაოდენობა*
+                  If you remember, please indicate the approximate date of the test and
+                  number of antibodies*
                 </h2>
                 <div class="pl-5 flex flex-col pb-[47px]">
                   <Field
                     name="test_date"
                     type="text"
-                    placeholder="რიცხვი"
+                    placeholder="date"
                     onfocus="(this.type='date')"
                     class="placeholder:text-[#232323] bg-transparent border-[0.8px] border-[#232323] px-5 py-[9px] text-lg max-w-[513px]"
                     v-model="test_date"
@@ -91,7 +91,7 @@
                   <Field
                     name="antibodies_number"
                     type="number"
-                    placeholder="ანტისხეულების რაოდენობა"
+                    placeholder="number of antibodies"
                     class="placeholder:text-[#232323] bg-transparent border-[0.8px] border-[#232323] px-5 py-[9px] text-lg max-w-[513px]"
                     v-model.number="antibodies_number"
                   />
@@ -99,14 +99,14 @@
               </div>
               <div v-if="values.antibody_test === 'false'">
                 <h2 class="text-[22px] font-bold max-w-[596px] pb-[29px]">
-                  მიუთითე მიახლოებითი პერიოდი (დღე/თვე/წელი) როდის გქონდა
+                  Indicate the approximate period (day/month/year) when you had 
                   Covid-19*
                 </h2>
                 <div class="pl-5 flex flex-col pb-[47px]">
                   <Field
                     name="covid_sickness_date"
                     type="text"
-                    placeholder="დდ/თთ/წწ"
+                    placeholder="dd/mm/yy"
                     onfocus="(this.type='date')"
                     rules="required"
                     class="placeholder:text-[#232323] bg-transparent border-[0.8px] border-[#232323] px-5 py-[9px] text-lg max-w-[513px]"
@@ -120,15 +120,16 @@
               </div>
             </div>
           </div>
-          <div class="relative">
-            <img src="@/assets/images/vaccinate2.png" class="relative z-10" />
+          <div class="hidden lg:relative lg:block">
+            <img src="@/assets/images/vaccinate2.png" class="relative z-10 lg:w-[540px] 2xl:w-[797px]" />
             <svg
               width="229"
               height="229"
               viewBox="0 0 229 229"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              class="animate absolute top-[260px] left-[80px]"
+              class="animate absolute w-[150px] top-[100px] left-[30px]  2xl:top-[210px] 2xl:left-[40px] 2xl:w-[229px]"
+
             >
               <circle cx="114.5" cy="114.5" r="114.5" fill="#DD3939" />
             </svg>
