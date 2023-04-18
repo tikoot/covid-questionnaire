@@ -5,13 +5,17 @@ configure({
   generateMessage: localize({
     en: {
       messages: {
-        required: "motxovnadiaa",
+        required: "This Field is Required",
         email: "This input is not in email format",
         min: "{field} must have at least 0:{min} symbols",
         max: "{field} must have at least 0:{max} symbols",
-        redberry_email: "This field must be in redberry mail format",
+        redberry_email: "This field must be in @redberry.ge mail format",
       },
-      names: {},
+      names: {
+         username: "username",
+        lastname: "lastname",
+        email: "email",
+      },
     },
     ka: {
       messages: {
@@ -30,4 +34,4 @@ configure({
   }),
 });
 
-setLocale("ka");
+setLocale("en");

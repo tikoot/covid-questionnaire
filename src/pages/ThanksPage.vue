@@ -4,7 +4,7 @@
       <img class="animate" src="@/assets/images/star1.png" alt="big star" />
     </div>
     <h1 class="text-white text-[64px] font-bold my-6 relative">
-      მ ა დ ლ ო ბ ა
+      Thank You
     </h1>
     <div class="ml-56">
       <img class="animate" src="@/assets/images/star.png" alt="small star" />

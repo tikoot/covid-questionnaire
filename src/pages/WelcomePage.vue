@@ -8,8 +8,8 @@
       to="/identify"
       class="flex flex-col text-center pt-[101px] hover:outline-[#243c5a]"
     >
-      <span class="pb-2 text-center">კითხვარის</span>
-      <span>დაწყება</span>
+      <span class="pb-2 text-center">Start</span>
+      <span>Questionnaire</span>
     </router-link>
   </div>
 </template>
