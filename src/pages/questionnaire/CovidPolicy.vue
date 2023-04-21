@@ -159,13 +159,22 @@
                 class="w-[280px] sm:w-[500px] h-[182px] bg-transparent mt-[20px] border-[#232323] border-[0.8px]"
               ></Field>
             </div>
-            <div class="flex justify-end items-end pt-[54px] w-[622px]">
+
+    
+           
+
+            <!-- <div class="flex pt-[91px] justify-end">
+              <back-button to="/covid-vaccine"></back-button>
+            </div> -->
+
+             <div class="flex justify-center items-center pt-[54px] mb-[10px]">
+              <back-button to="/covid-vaccine" class="pr-[30px]"></back-button>
               <submit-button></submit-button>
+               
             </div>
 
-            <div class="flex pt-[91px] justify-end">
-              <back-button to="/covid-vaccine"></back-button>
-            </div>
+
+          
           </div>
 
           <div class="hidden lg:block lg:relative">

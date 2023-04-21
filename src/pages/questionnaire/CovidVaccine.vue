@@ -4,7 +4,7 @@
     <section>
       <VueForm @submit="onSubmit" v-slot="{ meta, values }">
         <div class="flex justify-between">
-          <div class="min-w-[35%] pt-[42px]">
+          <div class="min-w-[35%] pt-[42px] mb-[20px]">
             <h2 class="text-[22px] font-bold pb-[11px]">Are you vaccinated?*</h2>
             <div class="pl-5 flex items-center pb-[8px]">
               <Field
